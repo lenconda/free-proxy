@@ -1,0 +1,43 @@
+{
+  "name": "free-proxy",
+  "version": "0.0.1",
+  "description": "Fetch free proxies from https://www.free-proxy-list.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lenconda/free-proxy.git"
+  },
+  "keywords": [
+    "proxy",
+    "proxy list",
+    "http proxy"
+  ],
+  "author": "lenconda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lenconda/free-proxy/issues"
+  },
+  "homepage": "https://github.com/lenconda/free-proxy#readme",
+  "devDependencies": {
+    "babel-eslint": "7.1.1",
+    "casual": "1.5.11",
+    "chai": "3.5.0",
+    "chai-as-promised": "6.0.0",
+    "chai-spies": "0.7.1",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.10.0",
+    "mocha": "3.2.0",
+    "nyc": "10.2.0",
+    "supertest": "3.0.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "superagent": "^4.1.0"
+  }
+}
