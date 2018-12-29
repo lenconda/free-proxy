@@ -1,10 +1,10 @@
 {
   "name": "free-proxy",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Fetch free proxies from https://www.free-proxy-list.com",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/**/*.test.js"
+    "test": "nyc mocha test/**/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "eslint-plugin-react": "6.10.0",
     "mocha": "3.2.0",
     "nyc": "10.2.0",
+    "proxy-supervisor": "^0.9.4",
     "supertest": "3.0.0"
   },
   "dependencies": {
