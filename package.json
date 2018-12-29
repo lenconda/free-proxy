@@ -10,12 +10,15 @@
     "type": "git",
     "url": "git+ssh://git@github.com/lenconda/free-proxy.git"
   },
+  "engines": {
+    "node": ">= 8.2.0"
+  },
   "keywords": [
     "proxy",
     "proxy list",
     "http proxy"
   ],
-  "author": "lenconda",
+  "author": "lenconda <i@lenconda.top>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lenconda/free-proxy/issues"
