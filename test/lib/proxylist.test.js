@@ -5,7 +5,7 @@ const proxyList = new ProxyList();
 
 describe('ProxyList', () => {
   it('should be an object', () => {
-    expect(typeof proxyList).to.be.eql('object');
+    expect(proxyList).to.be.an('object');
   });
 });
 
