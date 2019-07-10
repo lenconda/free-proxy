@@ -103,6 +103,33 @@ proxyList.random()
           });
 ```
 
+###### proxyList.randomFromCache()
+
+Get a proxy randomly. Based on `proxyList.get()`, this function will get a random item from the results of `proxyList.get()`. The list is cached the first time the method is invoked and only updated once the cached list runs out of proxies.
+
+Recommanded usage:
+
+```javascript
+let data;
+try {
+  data = await proxyList.randomFromCache();
+} catch (error) {
+  throw new Error(error);
+}
+```
+
+or alternatively:
+
+```javascript
+proxyList.randomFromCache()
+          .then(function (data) {
+            // get data here
+          })
+          .catch(function (error) {
+            throw new Error(error);
+          });
+```
+
 ## Tests
 
 To run the test suite, go to the root directory of this package, and install dependencies, and then run `npm test` or `npm run test`:
