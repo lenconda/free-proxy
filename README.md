@@ -16,6 +16,7 @@ Fetch free proxies from https://www.free-proxy-list.com
 - ES6 class support
 - Get proxies in medium and high speed
 - Non-Chinese proxies
+- Typescript Typings
 
 ## Requirements
 
@@ -29,9 +30,11 @@ Fetch free proxies from https://www.free-proxy-list.com
 ```bash
 # under product mode
 $ npm install free-proxy --save
+$ yarn add free-proxy
 
 # under development mode
 $ npm install free-proxy --save-dev
+$ yarn add -D free-proxy
 ```
 
 ## Quick Start
