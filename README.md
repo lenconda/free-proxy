@@ -136,6 +136,33 @@ proxyList.random()
           });
 ```
 
+###### proxyList.randomByCountryCode()
+
+Get a proxy randomly. Based on `proxyList.getByCountryCode()`, this function will get a random item from the results of `proxyList.get()`
+
+Recommended usage:
+
+```javascript
+let data;
+try {
+  data = await proxyList.randomByCountryCode('FR');
+} catch (error) {
+  throw new Error(error);
+}
+```
+
+or alternatively:
+
+```javascript
+proxyList.randomByCountryCode('FR')
+          .then(function (data) {
+            // get data here
+          })
+          .catch(function (error) {
+            throw new Error(error);
+          });
+```
+
 ###### proxyList.randomFromCache()
 
 Get a proxy randomly. Based on `proxyList.get()`, this function will get a random item from the results of `proxyList.get()`. The list is cached the first time the method is invoked and only updated once the cached list runs out of proxies.
