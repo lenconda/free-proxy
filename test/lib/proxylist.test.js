@@ -15,6 +15,17 @@ describe('.get()', function () {
     const proxies = await proxyList.get();
     expect(proxies).to.be.an('array');
     expect(proxies.length).to.be.gt(0);
+    expect(proxies[0].countryCode).to.be.a('string');
+  });
+});
+
+describe('.getByCountryCode()', function () {
+  this.timeout(60000);
+  it('should return a list of proxies in a specific countryCode', async function () {
+    const countryCode = 'US';
+    const proxies = await proxyList.getByCountryCode('US');
+    expect(proxies).to.be.an('array');
+    expect(proxies.filter(proxy => proxy.countryCode !== countryCode).length).to.be.eql(0);
   });
 });
 

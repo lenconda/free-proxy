@@ -46,6 +46,12 @@ Default module exports in CommonJS style
 const ProxyList = require('free-proxy');
 const proxyList = new ProxyList();
 ```
+or
+
+```javascript
+import ProxyList from 'free-proxy';
+const proxyList = new ProxyList();
+```
 
 ### Usages
 
@@ -53,7 +59,7 @@ const proxyList = new ProxyList();
 
 Get proxy list. This function will craw the website and returns an array of proxy list, and some information (e.g. IP address, port, country, etc.) wrapped in a Promise object.
 
-Recommanded usage:
+Recommended usage:
 
 ```javascript
 let proxies;
@@ -76,11 +82,38 @@ proxyList.get()
           });
 ```
 
+###### proxyList.getByCountryCode()
+
+Get proxy list from a specific country. This function will use `proxyList.get` and filter the result by countryCode
+
+Recommended usage:
+
+```javascript
+let proxies;
+try {
+  proxies = await proxyList.getByCountryCode('FR');
+} catch (error) {
+  throw new Error(error);
+}
+```
+
+or alternatively:
+
+```javascript
+proxyList.getByCountryCode('FR')
+          .then(function (proxies) {
+            // get proxies here
+          })
+          .catch(function (error) {
+            throw new Error(error);
+          });
+```
+
 ###### proxyList.random()
 
 Get a proxy randomly. Based on `proxyList.get()`, this function will get a random item from the results of `proxyList.get()`
 
-Recommanded usage:
+Recommended usage:
 
 ```javascript
 let data;
@@ -107,7 +140,7 @@ proxyList.random()
 
 Get a proxy randomly. Based on `proxyList.get()`, this function will get a random item from the results of `proxyList.get()`. The list is cached the first time the method is invoked and only updated once the cached list runs out of proxies.
 
-Recommanded usage:
+Recommended usage:
 
 ```javascript
 let data;
