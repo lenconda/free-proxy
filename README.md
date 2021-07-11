@@ -85,6 +85,33 @@ proxyList.get()
           });
 ```
 
+###### proxyList.getByProtocol()
+
+Get list of proxies using a specific protocol. This function will use `proxyList.get` and filter the result by countryCode
+
+Recommended usage:
+
+```javascript
+let proxies;
+try {
+  proxies = await proxyList.getByCountryCode('https');
+} catch (error) {
+  throw new Error(error);
+}
+```
+
+or alternatively:
+
+```javascript
+proxyList.getByCountryCode('https')
+          .then(function (proxies) {
+            // get proxies here
+          })
+          .catch(function (error) {
+            throw new Error(error);
+          });
+```
+
 ###### proxyList.getByCountryCode()
 
 Get proxy list from a specific country. This function will use `proxyList.get` and filter the result by countryCode
