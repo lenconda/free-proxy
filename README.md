@@ -103,7 +103,7 @@ try {
 or alternatively:
 
 ```javascript
-proxyList.getByCountryCode('https')
+proxyList.getByCountryCode('http')
           .then(function (proxies) {
             // get proxies here
           })
@@ -158,6 +158,32 @@ or alternatively:
 
 ```javascript
 proxyList.random()
+          .then(function (data) {
+            // get data here
+          })
+          .catch(function (error) {
+            throw new Error(error);
+          });
+```
+###### proxyList.randomByProtocol()
+
+Get a proxy randomly. Based on `proxyList.getByProtocol()`, this function will get a random item from the results of `proxyList.get()`
+
+Recommended usage:
+
+```javascript
+let data;
+try {
+  data = await proxyList.randomByProtocol('https');
+} catch (error) {
+  throw new Error(error);
+}
+```
+
+or alternatively:
+
+```javascript
+proxyList.randomByProtocol('http')
           .then(function (data) {
             // get data here
           })
