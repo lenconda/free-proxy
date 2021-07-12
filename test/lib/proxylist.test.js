@@ -29,6 +29,16 @@ describe('.getByCountryCode()', function () {
   });
 });
 
+describe('.getByProtocol()', function () {
+  this.timeout(60000);
+  it('should return a list of proxies using a given protocol', async function () {
+    const protocol = 'https';
+    const proxies = await proxyList.getByProtocol('https');
+    expect(proxies).to.be.an('array');
+    expect(proxies.filter(proxy => proxy.protocol !== protocol).length).to.be.eql(0);
+  });
+});
+
 describe('.random()', function () {
   this.timeout(60000);
   it('should return two different proxy items', async function () {
@@ -43,6 +53,15 @@ describe('.randomByCountryCode()', function () {
   it('should return two different proxy items', async function () {
     const data1 = await proxyList.randomByCountryCode('US');
     const data2 = await proxyList.randomByCountryCode('US');
+    expect(data1).to.be.not.eql(data2);
+  });
+});
+
+describe('.randomByProtocol()', function () {
+  this.timeout(60000);
+  it('should return two different proxy items', async function () {
+    const data1 = await proxyList.randomByProtocol('http');
+    const data2 = await proxyList.randomByProtocol('https');
     expect(data1).to.be.not.eql(data2);
   });
 });

@@ -14,8 +14,10 @@ export interface IFreeProxy {
 declare class ProxyList {
   get(): Promise<IFreeProxy[]>;
   getByCountryCode(countryCode: string): Promise<IFreeProxy[]>;
+  getByProtocol(protocol: string): Promise<IFreeProxy[]>;
   random(): Promise<IFreeProxy | undefined>;
   randomByCountryCode(countryCode: string): Promise<IFreeProxy | undefined>;
+  randomByProtocol(protocol: string): Promise<IFreeProxy | undefined>;
   randomFromCache(): Promise<IFreeProxy | undefined>;
 }
 
