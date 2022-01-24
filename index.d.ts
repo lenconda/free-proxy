@@ -21,6 +21,4 @@ declare class ProxyList {
   randomFromCache(): Promise<IFreeProxy | undefined>;
 }
 
-declare module "free-proxy"{
-  export = ProxyList;
-}
+export default ProxyList;
