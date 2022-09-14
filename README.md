@@ -87,14 +87,14 @@ proxyList.get()
 
 ###### proxyList.getByProtocol()
 
-Get list of proxies using a specific protocol. This function will use `proxyList.get` and filter the result by countryCode
+Get list of proxies using a specific protocol. This function will use `proxyList.get` and filter the result by protocaol
 
 Recommended usage:
 
 ```javascript
 let proxies;
 try {
-  proxies = await proxyList.getByCountryCode('https');
+  proxies = await proxyList.getByProtocol('https');
 } catch (error) {
   throw new Error(error);
 }
@@ -103,7 +103,7 @@ try {
 or alternatively:
 
 ```javascript
-proxyList.getByCountryCode('http')
+proxyList.getByProtocol('http')
           .then(function (proxies) {
             // get proxies here
           })
